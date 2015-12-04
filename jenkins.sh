@@ -17,6 +17,7 @@ copy_reference_file() {
 		cp -r /usr/share/jenkins/ref/${rel} /var/jenkins_home/${rel}; 
 	fi; 
 }
+export LC_LANG="en_US.UTF-8"
 export -f copy_reference_file
 echo "--- Copying files at $(date)" >> $COPY_REFERENCE_FILE_LOG
 find /usr/share/jenkins/ref/ -type f -exec bash -c 'copy_reference_file {}' \;
